@@ -382,8 +382,8 @@ public class ModificarLibro extends javax.swing.JPanel {
             int yearPubli = Integer.parseInt(txtPublicacion.getText());
             int uniDispo = Integer.parseInt(txtUnidades.getText());
 
-            MaterialLibroClases materialLibro = new MaterialLibroClases(idInterno, titulo, uniDispo, autor,
-                numPaginas, editorial, ISBN, yearPubli);
+            MaterialLibroClases materialLibro = new MaterialLibroClases(idInterno, titulo, autor,
+                    uniDispo, editorial, ISBN, numPaginas, yearPubli);
             
             if (MaterialLibro.ActualizarMaterialLibro(materialLibro)){
                JOptionPane.showMessageDialog(this, "Material actualizado correctamente", "Actualizar Material",

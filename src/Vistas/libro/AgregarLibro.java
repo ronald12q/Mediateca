@@ -280,8 +280,8 @@ public class AgregarLibro extends javax.swing.JPanel {
             int yearPubli = Integer.parseInt(txtPublicacion.getText());
             int uniDispo = Integer.parseInt(txtUnidades.getText());
             
-            MaterialLibroClases MaterialLibroClases = new MaterialLibroClases(idInterno, titulo, numPaginas, autor, yearPubli, editorial,
-                    ISBN, uniDispo);
+            MaterialLibroClases MaterialLibroClases = new MaterialLibroClases(idInterno, titulo, autor, numPaginas, editorial,
+                    ISBN, yearPubli, uniDispo);
             
             if (MaterialLibro.insertarMaterialLibro(MaterialLibroClases)){
                 JOptionPane.showMessageDialog(this, "Material guardado correctamente",

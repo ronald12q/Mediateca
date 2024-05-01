@@ -96,7 +96,7 @@ public class MaterialLibro {
                 int yearPubli = resultSet.getInt("yearPubli");
                 int uniDispo = resultSet.getInt("uniDispo");
                 
-                materialLibro = new MaterialLibroClases (id, titulo, numPaginas, autor, yearPubli, editorial, ISBN, uniDispo);
+                materialLibro = new MaterialLibroClases (id, titulo, autor, numPaginas, editorial, ISBN, yearPubli, uniDispo);
             }
             resultSet.close();
             statement.close();
@@ -127,7 +127,7 @@ public class MaterialLibro {
              int yearPubli = resultSet.getInt("yearPubli");
              int uniDispo = resultSet.getInt("uniDispo");
              
-             MaterialLibroClases materialLibro = new MaterialLibroClases (idInterno, titulo, numPaginas, autor, yearPubli, editorial, ISBN, uniDispo);
+             MaterialLibroClases materialLibro = new MaterialLibroClases (idInterno, titulo, autor, numPaginas, editorial, ISBN, yearPubli, uniDispo);
              materialLibro.add(materialLibros);
          }
             resultSet.close();

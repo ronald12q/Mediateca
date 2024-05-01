@@ -1,1 +1,1 @@
-no me deja crear el readme :(
+Si dejo crear el readme 

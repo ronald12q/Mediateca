@@ -87,7 +87,7 @@ public class MaterialLibro {
             
             if (resultSet.next()){
                 
-                String id = resultSet.getString("CodigoIdentificacion");
+                String id = resultSet.getString("idInterno");
                 String titulo = resultSet.getString("titulo");
                 String autor = resultSet.getString("autor");
                 int numPaginas = resultSet.getInt("numPaginas");
@@ -145,9 +145,10 @@ public class MaterialLibro {
         boolean rowUpdated = false;
         
         try {
-            String sql = "UPDATE libros SET idInterno = ?, titulo = ?, autor = ?,"
-                    + "numPaginas = ?, editorial = ?, ISBN = ?, yearPubli = ?,"
-                    + "uniDispo = ?";
+            String sql = "UPDATE libros SET titulo = ?, "
+                    + " autor = ?, numPaginas = ?, editorial = ?, ISBN = ?,"
+                    + " yearPubli = ?, uniDispo = ?"
+                    + " WHERE idInterno = ?";
             
             PreparedStatement statement = conexion.prepareStatement(sql);
             

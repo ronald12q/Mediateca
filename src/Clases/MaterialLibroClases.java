@@ -17,7 +17,7 @@ public class MaterialLibroClases {
     private int yearPubli;
     private int uniDispo;
     
-    public MaterialLibroClases (String idInterno, String titulo, String autor, int numPaginas, String editorial, String ISBN, int yearPubli, int uniDispo){
+    public MaterialLibroClases (String idInterno, String titulo, int numPaginas, String autor, int yearPubli, String editorial, String ISBN, int uniDispo){
             
             this.idInterno = idInterno;
             this.titulo = titulo;

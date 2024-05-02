@@ -87,7 +87,7 @@ public class MaterialLibro {
             
             if (resultSet.next()){
                 
-                String id = resultSet.getString("CodigoIdentificacion");
+                String id = resultSet.getString("idInterno");
                 String titulo = resultSet.getString("titulo");
                 String autor = resultSet.getString("autor");
                 int numPaginas = resultSet.getInt("numPaginas");
@@ -96,7 +96,7 @@ public class MaterialLibro {
                 int yearPubli = resultSet.getInt("yearPubli");
                 int uniDispo = resultSet.getInt("uniDispo");
                 
-                materialLibro = new MaterialLibroClases (id, titulo, autor, numPaginas, editorial, ISBN, yearPubli, uniDispo);
+                materialLibro = new MaterialLibroClases (id, titulo, numPaginas, autor, yearPubli, editorial, ISBN, uniDispo);
             }
             resultSet.close();
             statement.close();
@@ -127,7 +127,7 @@ public class MaterialLibro {
              int yearPubli = resultSet.getInt("yearPubli");
              int uniDispo = resultSet.getInt("uniDispo");
              
-             MaterialLibroClases materialLibro = new MaterialLibroClases (idInterno, titulo, autor, numPaginas, editorial, ISBN, yearPubli, uniDispo);
+             MaterialLibroClases materialLibro = new MaterialLibroClases (idInterno, titulo, numPaginas, autor, yearPubli, editorial, ISBN, uniDispo);
              materialLibro.add(materialLibros);
          }
             resultSet.close();
@@ -145,9 +145,10 @@ public class MaterialLibro {
         boolean rowUpdated = false;
         
         try {
-            String sql = "UPDATE libros SET idInterno = ?, titulo = ?, autor = ?,"
-                    + "numPaginas = ?, editorial = ?, ISBN = ?, yearPubli = ?,"
-                    + "uniDispo = ?";
+            String sql = "UPDATE libros SET titulo = ?, "
+                    + " autor = ?, numPaginas = ?, editorial = ?, ISBN = ?,"
+                    + " yearPubli = ?, uniDispo = ?"
+                    + " WHERE idInterno = ?";
             
             PreparedStatement statement = conexion.prepareStatement(sql);
             
